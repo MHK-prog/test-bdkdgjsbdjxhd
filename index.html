@@ -1,40 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#1769e8"><meta name="description" content="A lightweight, installable mobile app shell.">
-  <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Nova">
-  <link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/icon-192.png"><link rel="icon" href="./favicon.ico" sizes="any"><link rel="icon" type="image/png" href="./favicon.png">
-  <link rel="stylesheet" href="./styles.css"><title>Nova — App Shell</title>
-</head>
-<body>
-  <div class="app-frame">
-    <header class="topbar"><a class="brand" href="#home" aria-label="Nova home"><span class="brand-mark">✦</span><span>nova</span></a><div class="top-actions"><span id="connection" class="connection"><i></i><span>Online</span></span><button id="installTop" class="icon-button" aria-label="Install app" title="Install app">↓</button></div></header>
-    <main id="main" class="main-content">
-      <section class="welcome-card"><div class="eyebrow">YOUR APP, YOUR SPACE</div><h1>Feels right<br>at home.</h1><p>A lightweight app shell, ready for your everyday.</p><div class="card-orbit"><span>✦</span></div></section>
-      <section class="section-heading"><div><span class="eyebrow">AT A GLANCE</span><h2>Device status</h2></div><span class="live-dot">LIVE</span></section>
-      <div class="status-grid">
-        <article class="status-card"><span class="status-icon blue">◉</span><div class="status-label">Connection</div><strong id="networkValue">Online</strong></article>
-        <article class="status-card"><span class="status-icon purple">▣</span><div class="status-label">Display mode</div><strong id="displayValue">Browser</strong></article>
-        <article class="status-card"><span class="status-icon green">⌁</span><div class="status-label">Battery</div><strong id="batteryValue">Checking…</strong></article>
-        <article class="status-card"><span class="status-icon amber">◌</span><div class="status-label">Platform</div><strong id="platformValue">This device</strong></article>
-      </div>
-      <section class="settings-card"><div class="settings-title"><div><span class="eyebrow">MAKE IT YOURS</span><h2>Preferences</h2></div><span class="settings-gear">⚙</span></div>
-        <div class="setting-row"><div class="setting-copy"><strong>Haptic feedback</strong><span>Subtle touch response</span></div><label class="switch"><input id="hapticToggle" type="checkbox" checked><span class="slider"></span></label></div>
-        <div class="setting-row"><div class="setting-copy"><strong>Quiet notifications</strong><span>Keep this space calm</span></div><label class="switch"><input id="quietToggle" type="checkbox"><span class="slider"></span></label></div>
-      </section>
-      <button id="iosInstall" class="ios-install" hidden>＋ &nbsp; Add Nova to Home Screen</button>
-      <div class="build-note"><span class="secure-dot"></span> App shell ready <span>·</span> Offline-friendly</div>
-    </main>
-    <nav class="bottom-nav" aria-label="Main navigation">
-      <button class="nav-item active" data-tab="Home" aria-current="page"><span class="nav-icon">⌂</span><span>Home</span></button>
-      <button class="nav-item" data-tab="Explore"><span class="nav-icon">⌕</span><span>Explore</span></button>
-      <button class="nav-item" data-tab="Notifications"><span class="nav-icon">♧</span><span>Alerts</span></button>
-      <button class="nav-item" data-tab="Profile"><span class="nav-icon">◉</span><span>Profile</span></button>
-    </nav>
-  </div>
-  <div id="installBanner" class="install-banner" hidden><div class="banner-icon">✦</div><div class="banner-copy"><strong>Take Nova with you</strong><span>Install for a full-screen experience</span></div><button id="installButton" class="install-button">Install</button><button id="dismissBanner" class="dismiss" aria-label="Dismiss">×</button></div>
-  <div id="iosSheet" class="sheet-backdrop" hidden><section class="ios-sheet" role="dialog" aria-modal="true" aria-labelledby="iosTitle"><div class="sheet-handle"></div><button class="sheet-close" id="closeSheet" aria-label="Close">×</button><div class="sheet-emoji">📲</div><h2 id="iosTitle">Add Nova to your Home Screen</h2><p>Install this app for a quick, full-screen experience.</p><div class="ios-steps"><span>1</span><p>Tap the <b>Share</b> button <span class="share-symbol">↑</span> in Safari’s toolbar.</p><span>2</span><p>Choose <b>Add to Home Screen</b>, then tap <b>Add</b>.</p></div><button class="sheet-done" id="sheetDone">Got it</button></section></div>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="./app.js" defer></script>
-</body></html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffffff"><meta name="description" content="دموی تعاملی اپلیکیشن خدمات روزمره">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="اسنپی">
+<link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/icon-192.png"><link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png"><link rel="stylesheet" href="./styles.css"><title>اسنپی | همه‌چیز همین‌جاست</title>
+</head><body>
+<div class="app-shell">
+<header class="appbar"><button class="location" id="locationBtn" aria-label="انتخاب موقعیت"><span class="pin">⌖</span><span><small>موقعیت شما</small><strong>تهران، خیابان ولیعصر</strong></span><b class="chevron">⌄</b></button><button class="avatar" id="profileQuick" aria-label="پروفایل">ن</button></header>
+<main id="main" class="main">
+<section class="hero"><div class="hero-text"><span class="eyebrow">سلام، روزت بخیر 👋</span><h1>امروز کجا<br>می‌خوای بری؟</h1><p>خدمات روزمره‌ات، سریع و ساده</p></div><div class="hero-art"><span class="sun"></span><span class="road">〰</span><span class="car">🚙</span></div><div class="hero-dots"><i></i><i></i><i></i></div></section>
+<div class="section-title"><div><h2>سرویس‌های اسنپی</h2><p>برای شروع، یک سرویس انتخاب کن</p></div><span class="all-services">همه خدمات <b>‹</b></span></div>
+<section class="service-grid" id="services" aria-label="سرویس‌ها"></section>
+<section class="promo"><div class="promo-icon">🎁</div><div><strong>سفر اولت با تخفیف!</strong><span>کد تخفیف: <b>SNAPP20</b></span></div><button id="promoBtn" aria-label="جزئیات تخفیف">‹</button></section>
+<section class="recent"><div class="section-title compact"><h2>پیشنهاد برای تو</h2><span class="muted">ویژه‌ی امروز</span></div><article class="suggestion"><span class="suggest-icon">☕</span><div><b>یه قهوه‌ی خوب؟</b><small>سفارش از کافه‌های نزدیکت</small></div><span class="suggest-arrow">←</span></article></section>
+<div class="footer-note">اسنپی، همراه روزهای پرمشغله‌ی تو ✨</div>
+</main>
+<nav class="bottom-nav" aria-label="ناوبری اصلی">
+<button class="nav-item active" data-tab="home" aria-current="page"><span class="nav-symbol">⌂</span><span>خانه</span></button><button class="nav-item" data-tab="services"><span class="nav-symbol">▦</span><span>سرویس‌ها</span></button><button class="nav-item" data-tab="activity"><span class="nav-symbol">◷</span><span>تراکنش‌ها</span></button><button class="nav-item" data-tab="profile"><span class="nav-symbol">◉</span><span>پروفایل</span></button>
+</nav></div>
+<div class="backdrop" id="backdrop" hidden><section class="bottom-sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle"><div class="drag-handle" id="dragHandle" aria-label="بستن پنجره"><span></span></div><button class="sheet-x" id="sheetClose" aria-label="بستن">×</button><div id="sheetContent"></div></section></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="./app.js" defer></script></body></html>
