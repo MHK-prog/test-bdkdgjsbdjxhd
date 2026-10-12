@@ -1,30 +1,10 @@
-# روزنو | برنامه‌ریز روزانه
+# Nova — PWA App Shell
 
-روزنو یک برنامه‌ریز روزانهٔ فارسی، راست‌چین و واکنش‌گراست. برنامه بدون فریم‌ورک، نصب بسته یا مرحلهٔ build اجرا می‌شود؛ کارها و پوسته در حافظهٔ محلی مرورگر ذخیره می‌شوند. تاریخ‌ها در داده‌ها به‌شکل ISO نگهداری و با تقویم فارسی نمایش داده می‌شوند.
+A minimal, installability-focused vanilla HTML/CSS/JS mobile app shell. It includes a Web App Manifest, generated PNG/ICO artwork, iOS Home Screen metadata and guidance, an offline cache for core files, install prompt handling, and a native-feeling bottom tab bar.
 
-## اجرای محلی
+## Run / deploy
+Serve this directory over **HTTPS** (or `localhost` for development). A static host such as GitHub Pages is suitable. Keep `index.html`, `manifest.webmanifest`, `sw.js`, and the `icons/` directory together at the same deployment root/path. The service worker and relative manifest URLs support deployment under a subdirectory.
 
-فایل `index.html` را باز کنید. ذخیره‌سازی و امکانات اصلی در مرورگرهای به‌روز کار می‌کنند. برای آزمودن سرویس‌ورکر و نصب‌پذیری، پروژه را از یک میزبان محلی یا GitHub Pages اجرا کنید؛ سرویس‌ورکر در `file://` فعال نمی‌شود.
+On Android/desktop Chrome, the custom install prompt appears when the browser fires `beforeinstallprompt` (eligibility is controlled by the browser). On iOS Safari, use **Share → Add to Home Screen**; browsers do not expose a programmatic iOS install prompt.
 
-## انتشار روی GitHub Pages
-
-1. در GitHub یک مخزن تازه بسازید (برای سایت حساب کاربری می‌توانید نام مخزن را `USERNAME.github.io` بگذارید).
-2. فایل‌های این پوشه را **مستقیماً در ریشهٔ مخزن** بارگذاری کنید؛ ساختار ریشه باید شامل `index.html`، `styles.css`، `app.js`، `manifest.webmanifest`، `sw.js` و `favicon.svg` باشد.
-3. به **Settings → Pages** بروید. در **Build and deployment**، گزینهٔ **Deploy from a branch** را انتخاب کنید.
-4. شاخهٔ `main` و پوشهٔ `/(root)` را برگزینید و **Save** را بزنید.
-5. پس از پایان انتشار، نشانی نمایش‌داده‌شده در همان صفحه را باز کنید. برای مخزن پروژه معمولاً نشانی `https://USERNAME.github.io/REPOSITORY/` است.
-
-نیازی به build، دامنه یا تنظیم base path نیست؛ پیوندها و سرویس‌ورکر نسبی هستند و در مسیر مخزن پروژه نیز کار می‌کنند. برای تازه‌شدن فایل‌های کش‌شده، مقدار `CACHE` را در `sw.js` تغییر دهید.
-
-## امکانات
-
-- نمای کلی، آمار روز، درصد تکمیل و نمودار هفتگی
-- فهرست کارها با جست‌وجو و فیلتر دسته‌بندی
-- تقویم ماهانه و فهرست کارهای پیش‌رو
-- افزودن، ویرایش، حذف و تکمیل کار با اولویت و تاریخ
-- بینش‌های آماری، پوسته روشن/تاریک، خروجی JSON و بازنشانی
-- ذخیرهٔ خودکار در `localStorage` و کش آفلاین فایل‌های اصلی
-
-## سفارشی‌سازی و حریم خصوصی
-
-رنگ‌ها و چیدمان را در متغیرهای ابتدای `styles.css` تغییر دهید. متن‌های نمایشی و داده‌های نمونه در `app.js` قرار دارند. برای عوض‌کردن نمونه‌ها، تابع `seed` را ویرایش کنید. داده‌ها از این دستگاه و مرورگر خارج نمی‌شوند؛ خروجی JSON را امن نگه دارید و برای انتقال دستی، آن را به‌عنوان نسخهٔ پشتیبان استفاده کنید. فونت‌ها از فونت‌های موجود در دستگاه استفاده می‌کنند و برنامه وابستگی یا درخواست خارجی ندارد.
+The external Google Fonts import is optional; the system font stack remains the fallback. Browser support and install criteria are ultimately determined by the target browser and hosting context.
