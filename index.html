@@ -1,1 +1,40 @@
-<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101426"><meta name="description" content="روزنو؛ برنامه‌ریز روزانه شما"><title>روزنو | برنامه‌ریز روزانه</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"></head><body><div class="shell"><aside class="sidebar"><a class="brand" href="#overview"><span class="brandmark">ر</span><span><b>روزنو</b><small>هر روز، یک شروع تازه</small></span></a><div class="side-label">فضای کار</div><nav class="nav" aria-label="ناوبری اصلی"><button data-view="overview" class="active"><i data-icon="grid"></i>نمای کلی</button><button data-view="tasks"><i data-icon="check"></i>کارهای من</button><button data-view="calendar"><i data-icon="calendar"></i>تقویم و پیش‌رو</button><button data-view="insights"><i data-icon="chart"></i>بینش‌ها</button><button data-view="settings"><i data-icon="settings"></i>تنظیمات</button></nav><div class="side-bottom"><div class="quote">«قدم‌های کوچک، هر روز.»<small>برنامه‌ریزی با روزنو</small></div><div class="profile"><span class="avatar">ن</span><span><b>روز پربار</b><small>حساب شخصی</small></span><i data-icon="dots"></i></div></div></aside><main class="main"><header class="topbar"><button class="mobile-brand" data-view="overview"><span class="brandmark">ر</span> روزنو</button><div class="top-date" id="topDate"></div><div class="top-actions"><button class="icon-btn" id="themeQuick" aria-label="تغییر پوسته"><i data-icon="sun"></i></button><button class="add-btn" id="addTop"><i data-icon="plus"></i><span>کار جدید</span></button></div></header><section id="view" class="view" aria-live="polite"></section><footer>ساخته شده برای روزهای بهتر <span>✦</span></footer></main></div><nav class="mobile-nav" aria-label="ناوبری موبایل"><button data-view="overview" class="active"><i data-icon="grid"></i><small>خانه</small></button><button data-view="tasks"><i data-icon="check"></i><small>کارها</small></button><button class="mobile-add" id="addMobile" aria-label="افزودن کار"><i data-icon="plus"></i></button><button data-view="calendar"><i data-icon="calendar"></i><small>تقویم</small></button><button data-view="settings"><i data-icon="settings"></i><small>تنظیمات</small></button></nav><div id="modalRoot"></div><div id="toast" role="status" class="toast"></div><script src="app.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#1769e8"><meta name="description" content="A lightweight, installable mobile app shell.">
+  <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Nova">
+  <link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icons/icon-192.png"><link rel="icon" href="./favicon.ico" sizes="any"><link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="stylesheet" href="./styles.css"><title>Nova — App Shell</title>
+</head>
+<body>
+  <div class="app-frame">
+    <header class="topbar"><a class="brand" href="#home" aria-label="Nova home"><span class="brand-mark">✦</span><span>nova</span></a><div class="top-actions"><span id="connection" class="connection"><i></i><span>Online</span></span><button id="installTop" class="icon-button" aria-label="Install app" title="Install app">↓</button></div></header>
+    <main id="main" class="main-content">
+      <section class="welcome-card"><div class="eyebrow">YOUR APP, YOUR SPACE</div><h1>Feels right<br>at home.</h1><p>A lightweight app shell, ready for your everyday.</p><div class="card-orbit"><span>✦</span></div></section>
+      <section class="section-heading"><div><span class="eyebrow">AT A GLANCE</span><h2>Device status</h2></div><span class="live-dot">LIVE</span></section>
+      <div class="status-grid">
+        <article class="status-card"><span class="status-icon blue">◉</span><div class="status-label">Connection</div><strong id="networkValue">Online</strong></article>
+        <article class="status-card"><span class="status-icon purple">▣</span><div class="status-label">Display mode</div><strong id="displayValue">Browser</strong></article>
+        <article class="status-card"><span class="status-icon green">⌁</span><div class="status-label">Battery</div><strong id="batteryValue">Checking…</strong></article>
+        <article class="status-card"><span class="status-icon amber">◌</span><div class="status-label">Platform</div><strong id="platformValue">This device</strong></article>
+      </div>
+      <section class="settings-card"><div class="settings-title"><div><span class="eyebrow">MAKE IT YOURS</span><h2>Preferences</h2></div><span class="settings-gear">⚙</span></div>
+        <div class="setting-row"><div class="setting-copy"><strong>Haptic feedback</strong><span>Subtle touch response</span></div><label class="switch"><input id="hapticToggle" type="checkbox" checked><span class="slider"></span></label></div>
+        <div class="setting-row"><div class="setting-copy"><strong>Quiet notifications</strong><span>Keep this space calm</span></div><label class="switch"><input id="quietToggle" type="checkbox"><span class="slider"></span></label></div>
+      </section>
+      <button id="iosInstall" class="ios-install" hidden>＋ &nbsp; Add Nova to Home Screen</button>
+      <div class="build-note"><span class="secure-dot"></span> App shell ready <span>·</span> Offline-friendly</div>
+    </main>
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="nav-item active" data-tab="Home" aria-current="page"><span class="nav-icon">⌂</span><span>Home</span></button>
+      <button class="nav-item" data-tab="Explore"><span class="nav-icon">⌕</span><span>Explore</span></button>
+      <button class="nav-item" data-tab="Notifications"><span class="nav-icon">♧</span><span>Alerts</span></button>
+      <button class="nav-item" data-tab="Profile"><span class="nav-icon">◉</span><span>Profile</span></button>
+    </nav>
+  </div>
+  <div id="installBanner" class="install-banner" hidden><div class="banner-icon">✦</div><div class="banner-copy"><strong>Take Nova with you</strong><span>Install for a full-screen experience</span></div><button id="installButton" class="install-button">Install</button><button id="dismissBanner" class="dismiss" aria-label="Dismiss">×</button></div>
+  <div id="iosSheet" class="sheet-backdrop" hidden><section class="ios-sheet" role="dialog" aria-modal="true" aria-labelledby="iosTitle"><div class="sheet-handle"></div><button class="sheet-close" id="closeSheet" aria-label="Close">×</button><div class="sheet-emoji">📲</div><h2 id="iosTitle">Add Nova to your Home Screen</h2><p>Install this app for a quick, full-screen experience.</p><div class="ios-steps"><span>1</span><p>Tap the <b>Share</b> button <span class="share-symbol">↑</span> in Safari’s toolbar.</p><span>2</span><p>Choose <b>Add to Home Screen</b>, then tap <b>Add</b>.</p></div><button class="sheet-done" id="sheetDone">Got it</button></section></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js" defer></script>
+</body></html>
